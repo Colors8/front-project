@@ -48,7 +48,7 @@
 					<?php endforeach; ?>
 					<div id="beatsid-panel--save">
 						<?php if ($this->request->session()->read('Auth.User')): ?>
-							<button class="save">Save it</button>
+							<button class="save">Save this custom Beats</button>
 						<?php else: ?>
 							<a href="<?php echo $this->Url->build(["controller" => "Users", "action" => "register"]); ?>">
 								<button class="">Create an account</button>
@@ -217,7 +217,6 @@
 		this.numberOfBars = 40;
 		this.barsLeft = new Array();
 		this.barsRight = new Array();
-
 		this.audioContext = new AudioContext();
 		this.sourceBuffer = this.audioContext.createBufferSource();
 		this.fileResult;
@@ -229,42 +228,49 @@
 		this.raycaster = new THREE.Raycaster();
 		this.mouse = new THREE.Vector2();
 
+		// JSON Loader
 		this.loader = new THREE.JSONLoader();
 		this.beats_headphone = new THREE.Group();
 
+		// Headphones Rotation
 		this.targetRotationX = 0;
 		this.targetRotationOnMouseDownX = 0;
-
 		this.targetRotationY = 0;
 		this.targetRotationOnMouseDownY = 0;
 
+		// Mouse States
 		this.mouseX = 0;
 		this.mouseXOnMouseDown = 0;
-
 		this.mouseY = 0;
 		this.mouseYOnMouseDown = 0;
 
+		// Window sizes
 		this.windowX = window.innerWidth;
 		this.windowY = window.innerHeight;
-
-		this.canvasX = document.getElementById("beatsid-preview").offsetWidth;
-		this.canvasY = document.getElementById("beatsid-preview").offsetHeight;
-
 		this.windowHalfX = window.innerWidth / 2;
 		this.windowHalfY = window.innerHeight / 2;
 
+		// Canvas sizes
+		this.canvasX = document.getElementById("beatsid-preview").offsetWidth;
+		this.canvasY = document.getElementById("beatsid-preview").offsetHeight;
+
+		// Raytracer
 		this.projector = new THREE.Projector();
 		this.mouse_vector = new THREE.Vector3();
 		this.mouse = { x: 0, y: 0, z: 1 };
 		this.ray = new THREE.Raycaster( new THREE.Vector3(0,0,0), new THREE.Vector3(0,0,0) );
 		this.intersects = [];
 
+		// for Window resize
 		this.rtime;
 		this.timeout = false;
 		this.delta = 200;
 	}
 
 	Scene3D.prototype.initialize = function () {
+		// Hide Footer
+		$("#site-footer").hide();
+
 		// Create scene
 		this.scene = new THREE.Scene();
 

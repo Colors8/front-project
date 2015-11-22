@@ -112,10 +112,8 @@
 		</div>
 	</header>
 
-	<div id="site-content">
-		<?= $this->Flash->render() ?>
-		<?= $this->fetch('content') ?>
-	</div>
+	<?= $this->Flash->render() ?>
+	<?= $this->fetch('content') ?>
 
 	<footer id="site-footer">
 		<div id="site-footer--content">

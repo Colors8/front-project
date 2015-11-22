@@ -32,8 +32,19 @@ class PagesController extends AppController
 		$this->set('seo_title', "Home");
 	}
 
+	public function about() {
+		// SEO
+		$this->set('seo_title', "About us");
+	}
+
 	public function spec() {
+		$this->viewBuilder()->layout('default2');
 		// SEO
 		$this->set('seo_title', "Beats Studio Wireless Specs");
+	}
+
+	public function video() {
+		// SEO
+		$this->set('seo_title', "Sound Experience");
 	}
 }
