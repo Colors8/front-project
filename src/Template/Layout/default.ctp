@@ -14,11 +14,15 @@
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
 	<?= $this->Html->css('style.css') ?>
+	<?= $this->Html->css('galacticbox.css') ?>
 	<?= $this->Html->css('font-awesome/css/font-awesome.min') ?>
 
 	<?= $this->Html->script('jquery.min.js') ?>
 	<?= $this->Html->script('skrollr.min.js') ?>
 	<?= $this->Html->script('message.js') ?>
+	<?= $this->Html->script('user.js') ?>
+	<?= $this->Html->script('galacticbox.js') ?>
+	<?= $this->Html->script('loader.js') ?>
 
 	<?= $this->fetch('meta') ?>
 	<?= $this->fetch('css') ?>
@@ -31,7 +35,7 @@
 
 			<div id="site-header--logo">
 				<a href="<?php echo $this->Url->build(["controller" => "Pages", "action" => "home"]); ?>">
-					<img src="<?php echo $this->request->webroot.'img/ui/logo-black.png' ?>" />
+					<img src="<?php echo $this->request->webroot.'img/ui/logo-red.png' ?>" />
 				</a>
 			</div>
 
@@ -64,6 +68,18 @@
 							<li><a href="<?php echo $this->Url->build(["controller" => "Users", "action" => "register"]); ?>">
 								<i class="fa fa-bolt"></i><span>Register</span>
 							</a></li>
+							<li><a href="<?php echo $this->Url->build(["controller" => "Pages", "action" => "spec"]); ?>">
+								<i class="fa fa-cog"></i><span>Specifications</span>
+							</a></li>
+							<li><a href="<?php echo $this->Url->build(["controller" => "Pages", "action" => "video"]); ?>">
+								<i class="fa fa-volume-up"></i><span>Sound Experience</span>
+							</a></li>
+							<li><a href="<?php echo $this->Url->build(["controller" => "Beats", "action" => "add"]); ?>">
+								<i class="fa fa-headphones"></i><span>3D Customizer</span>
+							</a></li>
+							<li><a href="<?php echo $this->Url->build(["controller" => "Beats", "action" => "index"]); ?>">
+								<i class="fa fa-share-alt"></i><span>Community</span>
+							</a></li>
 							<hr />
 							<li><a href="<?php echo $this->Url->build(["controller" => "Users", "action" => "login"]); ?>">
 								<i class="fa fa-sign-in"></i><span>Login</span>
@@ -95,19 +111,6 @@
 					<?php endif; ?>
 				</div>
 			</div>
-			<script>
-				jQuery(function() {
-					$(document).on('click', "#site-header--account-inner", function () {
-						if ( $("#site-header--account-content").hasClass('active') ) {
-							$("#site-header--account-content").removeClass('active');
-							$("#site-header--account-inner").removeClass('active');
-						} else {
-							$("#site-header--account-content").addClass('active');
-							$("#site-header--account-inner").addClass('active');
-						}
-					});
-				});
-			</script>
 
 		</div>
 	</header>
@@ -126,31 +129,12 @@
 	<div id="loader" class="active">
 		<div id="loader-circle"></div>
 	</div>
-	<script>
-		jQuery(function() {
 
-			var body = document.body,
-			timer;
-
-			window.addEventListener('scroll', function() {
-				clearTimeout(timer);
-				if(!body.classList.contains('disable-hover')) {
-					body.classList.add('disable-hover')
-				}
-				timer = setTimeout(function(){
-					body.classList.remove('disable-hover')
-				},100);
-			}, false);
-
-			setTimeout(function(){$("#body").removeClass('hide');}, 200);
-			setTimeout(function(){$("#loader").removeClass('active');}, 200);
-
-			$(window).on('beforeunload ', function(e) {
-				$("#loader").addClass('active');
-			});
-			
-		});
-	</script>
+	<section id="galacticbox" class="">
+		<div id="galacticbox-mask"></div>
+		<div id="galacticbox-content"></div>
+		<div id="galacticbox-close"></div>
+	</section>
 
 </body>
 </html>

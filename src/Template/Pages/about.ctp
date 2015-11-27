@@ -11,27 +11,27 @@
 		<div id="about-members">
 
 			<div class="about-member">
-				<div class="about-member--photo" style="background-image: url('<?php echo $this->request->webroot.'img/ui/about-amine.jpg'; ?>');" /></div>
+				<div class="about-member--photo" style="background-image: url('<?php echo $this->request->webroot.'img/ui/bounigga.png'; ?>');" /></div>
 				<div class="about-member--name"><span>Amine Bouneggar</span></div>
 			</div>
 
 			<div class="about-member">
-				<div class="about-member--photo" style="background-image: url('<?php echo $this->request->webroot.'img/ui/about-amine.jpg'; ?>');" /></div>
+				<div class="about-member--photo" style="background-image: url('<?php echo $this->request->webroot.'img/ui/Dali.png'; ?>');" /></div>
 				<div class="about-member--name"><span>Mohamed-Ali Hazgui</span></div>
 			</div>
 
 			<div class="about-member">
-				<div class="about-member--photo" style="background-image: url('<?php echo $this->request->webroot.'img/ui/about-amine.jpg'; ?>');" /></div>
+				<div class="about-member--photo" style="background-image: url('<?php echo $this->request->webroot.'img/ui/Connarddekris.png'; ?>');" /></div>
 				<div class="about-member--name"><span>Kris Phivilay</span></div>
 			</div>
 
 			<div class="about-member">
-				<div class="about-member--photo" style="background-image: url('<?php echo $this->request->webroot.'img/ui/about-amine.jpg'; ?>');" /></div>
+				<div class="about-member--photo" style="background-image: url('<?php echo $this->request->webroot.'img/ui/adrien.png'; ?>');" /></div>
 				<div class="about-member--name"><span>Adrien Pliot-Lesecq</span></div>
 			</div>
 
 			<div class="about-member">
-				<div class="about-member--photo" style="background-image: url('<?php echo $this->request->webroot.'img/ui/about-amine.jpg'; ?>');" /></div>
+				<div class="about-member--photo" style="background-image: url('<?php echo $this->request->webroot.'img/ui/alex.png'; ?>');" /></div>
 				<div class="about-member--name"><span>Alexandra Tchoreloff</span></div>
 			</div>
 

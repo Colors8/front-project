@@ -14,11 +14,14 @@
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
 	<?= $this->Html->css('style.css') ?>
+	<?= $this->Html->css('galacticbox.css') ?>
 	<?= $this->Html->css('font-awesome/css/font-awesome.min') ?>
 
 	<?= $this->Html->script('jquery.min.js') ?>
 	<?= $this->Html->script('skrollr.min.js') ?>
 	<?= $this->Html->script('message.js') ?>
+	<?= $this->Html->script('galacticbox.js') ?>
+	<?= $this->Html->script('loader.js') ?>
 
 	<?= $this->fetch('meta') ?>
 	<?= $this->fetch('css') ?>
@@ -32,31 +35,12 @@
 	<div id="loader" class="active">
 		<div id="loader-circle"></div>
 	</div>
-	<script>
-		jQuery(function() {
 
-			var body = document.body,
-			timer;
-
-			window.addEventListener('scroll', function() {
-				clearTimeout(timer);
-				if(!body.classList.contains('disable-hover')) {
-					body.classList.add('disable-hover')
-				}
-				timer = setTimeout(function(){
-					body.classList.remove('disable-hover')
-				},100);
-			}, false);
-
-			setTimeout(function(){$("#body").removeClass('hide');}, 200);
-			setTimeout(function(){$("#loader").removeClass('active');}, 200);
-
-			$(window).on('beforeunload ', function(e) {
-				$("#loader").addClass('active');
-			});
-			
-		});
-	</script>
+	<section id="galacticbox" class="">
+		<div id="galacticbox-mask"></div>
+		<div id="galacticbox-content"></div>
+		<div id="galacticbox-close"></div>
+	</section>
 
 </body>
 </html>
