@@ -26,5 +26,5 @@ Pour finir la page "son" immerge encore un peu plus l'utilisateur dans l'univers
 
 ## Instructions
 
-1. Download [Composer](http://getcomposer.org/doc/00-intro.md) or update `composer self-update`.
-2. Run `php composer.phar create-project --prefer-dist cakephp/app [app_name]`.
+1. Le rendu final n'est pas complet avec les seuls fichiers partager ici.
+2. Le site complet est disponible sur http://www.beatsid.com
